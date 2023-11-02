@@ -341,6 +341,10 @@ export default {
 .calendar .calendar__main {
   display: flex;
   padding-top: 25px;
+  .bn-icon {
+    height: 44px;
+    font-size: 30px;
+  }
 }
 
 .calendar .calendar__today {
@@ -457,8 +461,5 @@ export default {
   border-radius: 50%;
   background: #eb4f04
 }
-.bn-icon {
-  height: 44px;
-  font-size: 30px;
-}
+
 </style>
