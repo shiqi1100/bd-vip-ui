@@ -1,25 +1,25 @@
 <template>
     <div class="calendar-year">
         <div class="calendar-year-hd">
-            <i-row>
-                <i-col span="2" class="text-center cursor" @click.native="prev()">
-                <Icon type="ios-arrow-back"></Icon>
-                </i-col>
-                <i-col span="20" class="calendar-year-hd__bd text-center cursor" v-text="title"></i-col>
-                <i-col span="2" class="text-center cursor" @click.native="next()">
-                <Icon type="ios-arrow-forward"></Icon>
-                </i-col>
-            </i-row>
+            <el-row>
+                <el-col :span="2" class="text-center cursor" @click.native="prev()">
+                  <bn-icon-arrow-left />
+                </el-col>
+                <el-col :span="20" class="calendar-year-hd__bd text-center" v-text="title"></el-col>
+                <el-col :span="2" class="text-center cursor" @click.native="next()">
+                  <bn-icon-arrow-right />
+                </el-col>
+            </el-row>
         </div>
         <div class="calendar-year-bd">
             <!-- 月 -->
             <div class="calendar-year-bd__month" v-show="choice == 'month'">
-                <i-row>
+                <el-row>
                     <!-- 选中-年月 -->
-                    <i-col :span="column == 0 ? 2 : column" v-for="n in 12" :key="n" @click.native="changeMonth(n)" class="text-center cursor" :class="{'active':date.choice.full == (year.start+'-'+n)}">
+                    <el-col :span="column == 0 ? 2 : column" v-for="n in 12" :key="n" @click.native="changeMonth(n)" class="text-center cursor" :class="{'active':date.choice.full == (year.start+'-'+n)}">
                     <span v-text="n+'月'"></span>
-                    </i-col>
-                </i-row>
+                    </el-col>
+                </el-row>
             </div>
             <!-- 年 -->
             <div class="calendar-year-bd__year" v-show="choice == 'year'">
@@ -177,34 +177,31 @@ import moment from 'moment'
 </script>
 <style lang="scss">
     .calendar-year {
-        .ivu-row {
-            display: inline-block;
-            width: 100%;
-        }
         padding: 20px;
         .calendar-year-hd {
             height: 40px;
             line-height: 40px;
             font-size: 16px;
-            .ivu-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 22px;
+            .el-row > .el-col{
+              display: flex;
+              align-items: center;
+              justify-content: center;
             }
-            .calendar-year-hd__bd {}
         }
         .calendar-year-bd {}
         .calendar-year-bd__month,
         .calendar-year-bd__year {
             .text-center {
+              cursor: pointer;
                 &.active span {
                     display: inline-block;
-                    background: #20a0ff;
+                    background: #0056ff;
                     color: #FFF;
                     width: 40px;
                     border-radius: 10px;
                 }
                 height: 40px;
+              text-align: center;
                 line-height: 40px;
             }
         }

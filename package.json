@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "blocks-next": "1.0.1-alpha.42",
+    "element-plus": "^2.4.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "nprogress": "^0.2.0",
