@@ -2,11 +2,11 @@
     <div class="calendar-year">
         <div class="calendar-year-hd">
             <el-row>
-                <el-col :span="2" class="text-center cursor" @click.native="prev()">
+                <el-col :span="2" class="text-center" style="cursor: pointer" @click.native="prev()">
                   <bn-icon-arrow-left />
                 </el-col>
                 <el-col :span="20" class="calendar-year-hd__bd text-center" v-text="title"></el-col>
-                <el-col :span="2" class="text-center cursor" @click.native="next()">
+                <el-col :span="2" class="text-center" style="cursor: pointer" @click.native="next()">
                   <bn-icon-arrow-right />
                 </el-col>
             </el-row>

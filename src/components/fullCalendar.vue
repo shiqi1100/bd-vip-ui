@@ -25,6 +25,7 @@
                                     trigger="hover">
                                     <div class="bd-full-calendar-attend-item__wrap"
                                         slot="reference">
+                                      {{el.signinTime}}
                                         <span v-show="el.signinTime">
                                             {{moment(el.signinTime).format('HH:mm')}}
                                         </span>
@@ -88,6 +89,7 @@
 
 <script>
 import _ from 'lodash'
+import moment from "moment";
     export default {
         name: 'calendar',
         components: {},
@@ -163,18 +165,18 @@ import _ from 'lodash'
                 this.cloneDays(new Date());
             },
             eachDay(data) {
-                console.log('this.days', this.days);
+              console.log(data, '167')
                 let A = [];
                 _.each(this.days, function (item) {
-                    var m = _.cloneDeep(item);
+                    let m = _.cloneDeep(item);
                     m.day = m.day < 10 ? '0' + m.day : m.day;
-                    for (var key in data) {
+                    for (let key in data) {
                         console.log('key', m.day, key);
                         // 有签到的遍历进去
                         if (m.day == key) {
                             m.data = data[key];
-                        };
-                    };
+                        }
+                    }
                     A.push(m);
                     // console.log('this.days', item, i)
                 });
@@ -185,7 +187,6 @@ import _ from 'lodash'
                     }
 
                     //当月 不会所有天数都显示 当天截止
-                    console.log('22222', (this.time.year + '-' + this.time.month), moment().format('YYYY-M'), moment().format('DD'), item.day);
                     //不同年， 年份大
                     if (this.time.year > Number(moment().format('YYYY'))) {
                         return;
@@ -261,8 +262,8 @@ import _ from 'lodash'
                         day,
                         data: []
                     });
-                    // console.log('days', _this.workday, _.indexOf(_this.workday, String(week)));
                 }
+              console.log(days)
                 return days;
             },
 
