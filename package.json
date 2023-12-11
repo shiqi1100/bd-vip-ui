@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "blocks-next": "1.0.1-alpha.42",
+    "lodash": "^4.17.21",
     "moment": "^2.29.4",
-    "vue": "^3.3.4"
+    "nprogress": "^0.2.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
   },
   "publishConfig": {
     "access": "public"
@@ -20,6 +23,7 @@
   "style": "dist/style.css",
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "sass": "^1.69.5",
     "vite": "^4.4.5"
   }
 }
