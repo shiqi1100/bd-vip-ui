@@ -22,10 +22,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           # 设置发包 npm 地址仓库
           registry-url: https://registry.npmjs.org
-          cache: 'pnpm'
 
       # 安装依赖，相当于 npm ci
-      - run: pnpm i --frozen-lockfile
+      - run: npm i
       - run: npm publish
         env:
           # 刚刚设置的 NPM_TOKEN
