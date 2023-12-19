@@ -31,7 +31,7 @@ jobs:
 
       # 安装依赖，相当于 npm ci
       - run: pnpm i --frozen-lockfile
-      - run: pnpm version patch
+      - run: npm version patch
       - run: pnpm run build
       - run: npm publish
 #        env:
