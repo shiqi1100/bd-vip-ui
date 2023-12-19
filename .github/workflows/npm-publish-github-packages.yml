@@ -31,8 +31,6 @@ jobs:
 
       # 安装依赖，相当于 npm ci
       - run: pnpm i --frozen-lockfile
-        # 版本升级
-      - run: pnpm run change-version
         # 打包
       - run: pnpm run build
         # 发布

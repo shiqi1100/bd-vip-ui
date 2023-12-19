@@ -9,9 +9,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "change-version": "pnpm version patch"
+    "build": "pnpm version patch && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "blocks-next": "1.0.1-alpha.42",
