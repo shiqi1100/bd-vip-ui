@@ -30,7 +30,8 @@ jobs:
           cache: 'pnpm'
 
       # 安装依赖，相当于 npm ci
-      - run: pnpm i
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm version patch
       - run: pnpm run build
       - run: npm publish
 #        env:
