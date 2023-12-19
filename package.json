@@ -4,6 +4,7 @@
   "version": "0.0.3",
   "type": "module",
   "main": "dist/vip-ui.js",
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

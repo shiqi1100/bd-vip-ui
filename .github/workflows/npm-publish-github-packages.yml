@@ -4,6 +4,9 @@ on:
     branches:
       - master
 
+env:
+  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
 # 按顺序运行作业
 jobs:
   publish-gpr:
@@ -14,18 +17,22 @@ jobs:
       matrix:
         node-version: [16]
     steps:
-      # 拉取 github 仓库代码
+      # 签出您的存储库$GITHUB_WORKSPACE，以便您的工作流可以访问它。
       - uses: actions/checkout@v3
-      # 设定 node 环境
+      # 安装 pnpm 包管理器
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      # 使用特定版本的 node.js 设置 GitHub Actions 工作流程
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          # 设置发包 npm 地址仓库
-          registry-url: https://registry.npmjs.org
+          node-version: 18
+          cache: 'pnpm'
 
       # 安装依赖，相当于 npm ci
-      - run: npm i
+      - run: pnpm i
+      - run: pnpm run build
       - run: npm publish
-        env:
+#        env:
           # 刚刚设置的 NPM_TOKEN
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+#          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
