@@ -1,7 +1,7 @@
 {
   "name": "bd-vip-ui",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "dist/vip-ui.js",
   "files": [
@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "cz": "czg",
+    "cz": "git add . && czg",
     "pre:publish": "pnpm version patch"
   },
   "config": {
