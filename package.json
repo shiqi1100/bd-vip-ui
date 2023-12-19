@@ -9,8 +9,15 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "pnpm version patch && vite build",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "cz": "czg",
+    "pre:publish": "pnpm version patch"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "dependencies": {
     "blocks-next": "1.0.1-alpha.42",
@@ -27,6 +34,8 @@
   "style": "dist/style.css",
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "cz-git": "^1.8.0",
+    "czg": "^1.8.0",
     "sass": "^1.69.5",
     "vite": "^4.4.5"
   }
