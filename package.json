@@ -12,7 +12,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "git-commit": "git add . && git cz",
-    "pre:publish": "pnpm version patch"
+    "pre:publish": "cd ./scripts && version-patch.sh"
   },
   "config": {
     "commitizen": {
