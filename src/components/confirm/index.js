@@ -1,8 +1,8 @@
-import confirm from '@/components/confirm/confirm.vue'
+import myConfirm from '@/components/confirm/useConfirm.vue'
 import { createApp } from 'vue'
-export default ({ title, content, confirmText, closeText, outClose }) => {
+export const useConfirm = ({ title, content, confirmText, closeText, outClose }) => {
   return new Promise((resolve, reject) => {
-    const instance = createApp(confirm, {
+    const instance = createApp(myConfirm, {
       title,
       content,
       confirmText,

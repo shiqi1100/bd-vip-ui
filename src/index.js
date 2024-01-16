@@ -19,4 +19,3 @@ const comp = {
 
 export default comp
 
-
