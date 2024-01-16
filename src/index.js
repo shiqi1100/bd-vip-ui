@@ -2,6 +2,11 @@ import Calendar from "./components/calendar.vue";
 import CalendarMonth from "./components/CalendarMonth.vue";
 import fullCalendar from "./components/fullCalendar.vue";
 
+
+// 函数式组件
+import confirm from "./components/confirm";
+
+
 const component = [Calendar, CalendarMonth, fullCalendar]
 
 const comp = {
@@ -13,3 +18,8 @@ const comp = {
 }
 
 export default comp
+
+
+export {
+    confirm
+}
