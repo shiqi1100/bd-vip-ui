@@ -1,35 +1,35 @@
 import confirm from '@/components/confirm/confirm.vue'
 import { createApp } from 'vue'
 export default ({ title, content, confirmText, closeText, outClose }) => {
-  return new Promise((reslove, reject) => {
+  return new Promise((resolve, reject) => {
     const instance = createApp(confirm, {
-      title, 
-      content, 
-      confirmText, 
-      closeText, 
+      title,
+      content,
+      confirmText,
+      closeText,
       outClose,
-      confirmFn: () => { 
+      confirmFn: () => {
         closeUnmount()
-        reslove()
+        resolve()
       },
       closeFn: () => {
         closeUnmount()
         reject()
       }
     })
-  
+
     // 创建一个节点
-    const vnode = document.createElement('div')
+    const vNode = document.createElement('div')
     // 添加到body元素上
-    document.body.appendChild(vnode)
+    document.body.appendChild(vNode)
     // 实例挂载到节点上
-    instance.mount(vnode)
+    instance.mount(vNode)
 
     // 关闭状态
     // 注册实例并移除节点
     function closeUnmount() {
-      instance.unmount(vnode)
-      document.body.removeChild(vnode)
+      instance.unmount()
+      document.body.removeChild(vNode)
     }
   })
 }

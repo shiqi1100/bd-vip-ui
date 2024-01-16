@@ -4,7 +4,7 @@ import fullCalendar from "./components/fullCalendar.vue";
 
 
 // 函数式组件
-import confirm from "./components/confirm";
+export * from "./components/confirm/index.js";
 
 
 const component = [Calendar, CalendarMonth, fullCalendar]
@@ -20,6 +20,3 @@ const comp = {
 export default comp
 
 
-export {
-    confirm
-}

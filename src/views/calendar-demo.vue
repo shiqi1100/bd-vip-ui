@@ -12,12 +12,20 @@
         <div class="worktask-calendar-rigth-title" @click="changeView">{{viewName}}</div>
       </div>
     </Calendar>
+    <button @click="confirmDialog">打开弹窗</button>
   </div>
 </template>
 
 <script setup>
 import {computed, reactive} from "vue";
 import calendar from "../components/calendar.vue";
+import { useConfirm } from "/dist/vip-ui.js"
+// import confirm from "../components/confirm/index.js"
+function confirmDialog() {
+  useConfirm({title: 'ddd'}).then(() => {
+    console.log('111')
+  })
+}
 const data = reactive({
   view: 'week',
   indicator: {},

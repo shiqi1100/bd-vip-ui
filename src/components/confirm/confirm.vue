@@ -21,11 +21,11 @@
 import { ref } from 'vue';
 const props = withDefaults(
   defineProps<{
-    title?: string
-    content?: string
-    confirmText?: string
-    closeText?: string
-    outClose?: boolean
+    title?: string | undefined
+    content?: string | undefined
+    confirmText?: string | undefined
+    closeText?: string | undefined
+    outClose?: boolean | undefined
     confirmFn: Function
     closeFn: Function
   }>(),
