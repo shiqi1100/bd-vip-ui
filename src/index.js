@@ -12,7 +12,7 @@ const component = [Calendar, CalendarMonth, fullCalendar]
 const comp = {
     install(app) {
         component.forEach(i => {
-            app.component(i.name, Calendar)
+            app.component(i.name, i)
         })
     }
 }
