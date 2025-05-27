@@ -17,5 +17,11 @@ const comp = {
     }
 }
 
+export {
+    Calendar,
+    CalendarMonth,
+    fullCalendar
+}
+
 export default comp
 
